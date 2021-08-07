@@ -1,0 +1,82 @@
+:root {
+  // variables
+  --color-primary: #3f51b5;
+  --color-primary-dark: #35459b;
+  --shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+//Break-points
+$br-large: 75em; //1200px
+$br-medium: 43.75em; //700px
+$br-small: 21.875em; //350px
+
+// placeholder
+%input-placeholder {
+  font-family: inherit;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  padding: 1rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.5rem;
+
+  &:focus {
+    outline: none;
+    border: 0.1rem solid var(--color-primary);
+  }
+}
+
+%btn-placeholder {
+  position: relative;
+  align-self: center;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  background-color: var(--color-primary);
+  border: none;
+  color: #f2f2f2;
+  transition: all 0.2s ease;
+
+  &:active {
+    background-color: var(--color-primary-dark);
+    top: 0.2rem;
+    box-shadow: var(--shadow);
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%; // 10/16=0.625
+
+  @media only screen and (max-width: $br-large) {
+    & {
+      font-size: 50%;
+    }
+  }
+}
+
+.App {
+  padding: 0 2rem;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(max-content, 12vh) minmax(min-content, 82vh);
+  grid-row-gap: 1rem;
+}
