@@ -11,6 +11,7 @@ function Header({ total }) {
   );
 }
 
+// Dispatcher that help to dispatch the action creators...
 const mapStateToProps = (state) => {
   return state.AppReducer;
 };

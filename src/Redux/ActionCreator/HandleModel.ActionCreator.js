@@ -5,11 +5,14 @@ export const HandleShowModel = (index) => {
       AppReducer: { list },
     } = await getState();
 
+    //Search the related item from list and return that item...
     let selectedItem = list.find((_item, _index) => {
       if (index === _index) {
         return _item;
       }
     });
+
+    //Adding a index key value into that item that help us while updating the items form the list..
 
     selectedItem = { ...selectedItem, index: index };
 

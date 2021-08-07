@@ -4,20 +4,22 @@ import HandleUpdateListItem from "../Redux/ActionCreator/HandleUpdateListItem.Ac
 import { connect } from "react-redux";
 
 function Model({ closeModel, showModel, selectedItem, update }) {
-  console.log(selectedItem);
-
-  //Hooks
+  //State Hooks
   const [essentials, setEssentials] = useState({});
 
   //Helper function
+
+  // Model Close Handler....
   const handleCloseModel = () => {
     closeModel();
   };
 
+  // Model Upadate Handler....
   const handleUpdateListItem = (e) => {
     setEssentials({ ...selectedItem, [e.target.name]: e.target.value });
   };
 
+  //Model Submit handler...
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
     update(essentials);
@@ -94,6 +96,7 @@ function Model({ closeModel, showModel, selectedItem, update }) {
   );
 }
 
+// Dispatcher that help to dispatch the action creators...
 const mapDispatchToProps = (dispatch) => {
   return {
     closeModel: () => dispatch(HandleCloseModel()),
@@ -101,6 +104,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+// Convert the store states into the props...
 const mapStateToProps = (state) => {
   return state.AppReducer;
 };

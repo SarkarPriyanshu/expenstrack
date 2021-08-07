@@ -4,6 +4,7 @@ const HandleUpdateListItem = (item) => {
       AppReducer: { selectedItem, list },
     } = await getState();
 
+    //Check the selected item that need to be updated and then update the data in that item..
     let _newList = list.map((_item, _index) => {
       if (_index === selectedItem.index) {
         return {
@@ -21,6 +22,7 @@ const HandleUpdateListItem = (item) => {
 
     let _total = 0;
 
+    //Recalculating the total after the updation if the list..
     _newList.forEach((_item) => {
       _total += parseInt(_item.amount);
     });

@@ -17,6 +17,7 @@ function MainList({ list }) {
   );
 }
 
+// Convert the store states into the props...
 const mapStateToProps = (state) => {
   return state.AppReducer;
 };

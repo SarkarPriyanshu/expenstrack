@@ -4,6 +4,7 @@ const HandleFormSubmit = (essentials) => {
       AppReducer: { total },
     } = await getState();
 
+    //Calculating the total
     const _total = total + parseInt(essentials.amount);
 
     dispatch({ type: "HANDLE_FORM_SUBMIT", payload: { essentials, _total } });

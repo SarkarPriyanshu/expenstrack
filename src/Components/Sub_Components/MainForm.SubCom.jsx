@@ -5,14 +5,17 @@ import HandleFormSubmit from "../../Redux/ActionCreator/HandleFormSubmit.ActionC
 function MainForm(props) {
   const { handleFormSubmit } = props;
 
-  //Hook
+  //State Hook
   const [essentials, setEssentials] = useState({});
 
   //Helper function
+
+  //On Change handler...
   const handleChange = (e) => {
     setEssentials({ ...essentials, [e.target.name]: e.target.value });
   };
 
+  //On submit handler...
   const handleSubmit = (e) => {
     e.preventDefault();
     handleFormSubmit(essentials);
@@ -77,10 +80,12 @@ function MainForm(props) {
   );
 }
 
+// Convert the store states into the props...
 const mapStateToProps = (state) => {
   return state.AppReducer;
 };
 
+// Dispatcher that help to dispatch the action creators...
 const mapDispatchToProps = (dispatch) => {
   return {
     handleFormSubmit: (essentials) => dispatch(HandleFormSubmit(essentials)),

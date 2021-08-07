@@ -15,10 +15,12 @@ function MainListItem({
 }) {
   //Helper function
 
+  //Handle the close event...
   const handleClose = (index) => {
     removeListItem(index);
   };
 
+  //Handle the show model event..
   const handleShowModel = (index) => {
     showModel(index);
   };
@@ -55,10 +57,12 @@ function MainListItem({
   );
 }
 
+// Convert the store states into the props...
 const mapStateToProps = (state) => {
   return state.AppReducer;
 };
 
+// Dispatcher that help to dispatch the action creators...
 const mapDispatchToProps = (dispatch) => {
   return {
     removeListItem: (index) => dispatch(RemoveListItem(index)),

@@ -2,6 +2,7 @@ import { defaultState } from "../defaultState";
 
 const AppReducer = (state = defaultState, action) => {
   switch (action.type) {
+    //Handle the form submition...
     case "HANDLE_FORM_SUBMIT":
       return {
         ...state,
@@ -9,6 +10,7 @@ const AppReducer = (state = defaultState, action) => {
         total: action.payload._total,
       };
 
+    //Handle the remove item from list...
     case "REMOVE_LIST_ITEM":
       return {
         ...state,
@@ -16,6 +18,7 @@ const AppReducer = (state = defaultState, action) => {
         total: action.payload._total,
       };
 
+    //Handle the model show event and put that item into selectedItem variable..
     case "HANDLE_SHOW_MODEL":
       return {
         ...state,
@@ -23,6 +26,7 @@ const AppReducer = (state = defaultState, action) => {
         selectedItem: action.payload,
       };
 
+    //Handle the model close event..
     case "HANDLE_CLOSE_MODEL":
       return {
         ...state,
@@ -30,6 +34,7 @@ const AppReducer = (state = defaultState, action) => {
         selectedItem: {},
       };
 
+    //Handle the update event of an item in the list..
     case "UPDATE_LIST_ITEM":
       return {
         ...state,
